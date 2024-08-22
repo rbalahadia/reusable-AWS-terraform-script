@@ -15,12 +15,12 @@ _Services included in this re-usable terraform._
    d. 1 NAT gateway
 2. EC2 instance/s (number of instance depends on count)
    a. Security group
-   b. userdata
+   b. userdata (to be added)
 3. Application Load Balancer
    a. Security group
 4. Target groups
-5. Web Application Firewall
-6. Cloudfront
+5. Web Application Firewall(to be added)
+6. Cloudfront(to be added)
 
 
 **_Feel free to clone this repository as base for your own terraform :)_ **
