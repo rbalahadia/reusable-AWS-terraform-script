@@ -21,3 +21,6 @@ _Services included in this re-usable terraform._
 4. Target groups
 5. Web Application Firewall
 6. Cloudfront
+
+
+**_Feel free to clone this repository as base for your own terraform :)_ **
