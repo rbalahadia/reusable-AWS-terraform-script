@@ -1,5 +1,4 @@
-# dev/main.tf
-/*terraform {
+terraform {
   backend "s3" {
     bucket = "input your bucket name here"
     key    = "input the name of your tfstate"
@@ -14,24 +13,7 @@
 }
 provider "aws" {
   region = "enter your aws region"
-}*/
-terraform {
-  backend "s3" {
-    bucket = "test-tf-state-russell"
-    key    = "terraform-mytest.tfstate"
-    region = "us-west-2"  
-  }
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.62.0"
-    }
-  }
 }
-provider "aws" {
-  region = "us-west-2"
-}
-# use the magnolia-postgres branch of the Infrastructure Module
 
 module reusable_terraform {
   source  = "./module/"
