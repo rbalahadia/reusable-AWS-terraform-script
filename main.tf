@@ -25,9 +25,9 @@ module reusable_terraform {
   private_subnet_b_cidr  = "100.0.169.0/24"
   environment            = "dev" ##What environment is the infrastructure you're creating
   project_name           = "sample" ##Name of the project, This will be used on all naming conventions of the script
-  terraform_bucket       = "test-tf-state-russell" ##Name of the bucket that will be used.
+  terraform_bucket       = "input your bucket name here" ##Name of the bucket that will be used.
   ec2_instance_count     = 1
-  ec2_instance_image     = "ami-0ba84480150a07294" ##the number of instances to be created.
+  ec2_instance_image     = "input ami-xxxxx" ##the number of instances to be created.
   ec2_instance_type      = "t3.medium" ##Instance type of the instances to be created.
   volume_size        = 40 ##Volume size of the instances to be created.
   #db_size            = 100 ##RDS volume size in GB
