@@ -22,6 +22,18 @@ _Services included in this re-usable terraform._
 5. Web Application Firewall(to be added)
 6. Cloudfront(to be added)
 
+_steps to run/apply the TF:_
+1. Clone the repository.
+2. Make sure you have terraform 1.9.4 in your local
+3. Update main.tf to your desired parameters of your infra( name, region, etc.)
+4. EXPORT AWS_ACCESS_KEY_ID="xxxxxxxx"
+5. EXPORT AWS_SECRET_ACCESS_KEY="xxxxxxxx"
+6. Run terraform init
+7. Run terraform plan
+8. Run terraform apply
+9. Congratulations! you should see your new Infra in your AWS account.
+
 
 **_Feel free to clone this repository as base for your own terraform :)_ **
+
 Created by: Russell Balahadia
