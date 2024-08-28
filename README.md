@@ -19,8 +19,8 @@ _Services included in this re-usable terraform._
 3. Application Load Balancer
    a. Security group
 4. Target groups
-5. Web Application Firewall(to be added)
-6. Cloudfront(to be added)
+5. Web Application Firewall
+6. Cloudfront
 
 _steps to run/apply the TF:_
 1. Clone the repository.
