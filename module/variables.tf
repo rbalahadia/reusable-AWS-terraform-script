@@ -3,24 +3,24 @@
 variable "ec2_instance_image" {
       type = string
       description = "Instance image id. eg. ami-xxxx"
-      default = "dummy"
+      default = "ami-033067239f2d2bfbc"
 }
 
 variable "ec2_instance_type" {
   type    = string
   default = "t3.medium"
-  description = "EC2 Instance type for Sonar instance"
+  description = "EC2 Instance type"
 }
 variable "ec2_instance_count" {
   type    = string
   default = "1"
-  description = "EC2 Instance type for Sonar instance"
+  description = "number of EC2 instance to create"
 }
 #####GLOBAL#####
 variable "environment" {
       type = string
       description = "acronym to designate the stage of the environment. E.g. dev, int, prd, ...)"
-      default = "dummy"
+      default = "dev"
 }
 variable "project_name" {
       type = string
@@ -29,8 +29,8 @@ variable "project_name" {
 }
 variable "volume_size" {
       type = string
-      description = "input project name)"
-      default = "dummy"
+      description = "Input your volume size"
+      default = "10"
 }
 
 variable "terraform_bucket" {

@@ -15,7 +15,7 @@ _Services included in this re-usable terraform._
    d. 1 NAT gateway
 2. EC2 instance/s (number of instance depends on count)
    a. Security group
-   b. userdata (to be added)
+   b. userdata 
 3. Application Load Balancer
    a. Security group
 4. Target groups
@@ -34,6 +34,6 @@ _steps to run/apply the TF:_
 9. Congratulations! you should see your new Infra in your AWS account.
 
 
-**_Feel free to clone this repository as base for your own terraform :)_ **
+**_Feel free to clone this repository as basis for your own terraform :)_ **
 
 Created by: Russell Balahadia

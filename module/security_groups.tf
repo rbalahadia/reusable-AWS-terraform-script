@@ -34,6 +34,7 @@ resource "aws_security_group" "terraform_lb_sg" {
                ]              
  tags = merge(var.standard_tags, {
     Name                 = "${var.project_name}-${var.environment}-alb-security-group"
+    Created_date         = local.created_date
   })
 }
 ##############################################
@@ -113,6 +114,7 @@ resource "aws_security_group" "terraform_ec2_sg" {
                ]            
  tags = merge(var.standard_tags, {
     Name                 = "${var.project_name}-${var.environment}-ec2-security-group"
+    Created_date         = local.created_date
   })
 }
 ##################################################

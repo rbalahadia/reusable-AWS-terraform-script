@@ -4,6 +4,7 @@ resource "aws_vpc" "main" {
     enable_dns_hostnames = true
     tags =  merge(var.standard_tags, {
       "Name" = "${var.project_name}-${var.environment}-vpc"
+      "Created_date"         = local.created_date
     }) 
  }
 resource "aws_subnet" "terraform_public_subnet_a" {
@@ -12,6 +13,7 @@ resource "aws_subnet" "terraform_public_subnet_a" {
     availability_zone = "us-west-2a"
     tags = merge(var.standard_tags, {
       "Name" = "${var.project_name}-${var.environment}-public-subnet-a"
+      "Created_date"         = local.created_date      
     })
 }
 resource "aws_subnet" "terraform_public_subnet_b" {
@@ -20,12 +22,14 @@ resource "aws_subnet" "terraform_public_subnet_b" {
     availability_zone = "us-west-2b"
     tags = merge(var.standard_tags, {
       "Name" = "${var.project_name}-${var.environment}-public-subnet-b"
+      "Created_date"         = local.created_date 
     })
 }  
 resource "aws_internet_gateway" "terraform_ig" {
     vpc_id = aws_vpc.main.id
     tags = merge(var.standard_tags, {
       "Name" = "${var.project_name}-${var.environment}-internet-gateway"
+      "Created_date"         = local.created_date 
     })
     }   
 resource "aws_route_table" "terraform_public_route_a"{
@@ -44,6 +48,7 @@ resource "aws_route_table" "terraform_public_route_a"{
     }                
     tags = merge(var.standard_tags, {
       Name = "${var.project_name}-${var.environment}-route-a"
+      "Created_date"         = local.created_date 
     })
 }
 resource "aws_route_table" "terraform_public_route_b" {
@@ -62,6 +67,7 @@ resource "aws_route_table" "terraform_public_route_b" {
     }                
     tags = merge(var.standard_tags, {
       Name = "${var.project_name}-${var.environment}-route-b"
+      Created_date         = local.created_date 
     })
 }
 resource "aws_route_table_association" "terraform_route_association_a"{
@@ -81,6 +87,7 @@ resource "aws_subnet" "terraform_private_subnet_a" {
     availability_zone = "us-west-2a"
     tags = merge(var.standard_tags, {
       Name = "${var.project_name}-${var.environment}-private-subnet-a"
+      Created_date         = local.created_date
     })
 }
 resource "aws_subnet" "terraform_private_subnet_b" {
@@ -89,6 +96,7 @@ resource "aws_subnet" "terraform_private_subnet_b" {
     availability_zone = "us-west-2b"
     tags = merge(var.standard_tags, {
       Name = "${var.project_name}-${var.environment}-private-subnet-b"
+      Created_date         = local.created_date
     })
 }
 #Private Subnet components
@@ -97,6 +105,7 @@ resource "aws_eip" "nat_elastic_ip" {
     domain                    = "vpc"
     tags = merge(var.standard_tags, {
       Name = "${var.project_name}-${var.environment}-nat-elastic-ip"
+      Created_date         = local.created_date
     })  
 }
 
@@ -106,6 +115,7 @@ resource "aws_nat_gateway" "terraform_nat_gateway" {
     depends_on = [aws_internet_gateway.terraform_ig]
     tags = merge(var.standard_tags, {
       Name = "${var.project_name}-${var.environment}-nat-gateway"
+      Created_date         = local.created_date
     })
     }
 
@@ -125,6 +135,7 @@ resource "aws_route_table" "terraform_private_route_a" {
     }    
     tags = merge(var.standard_tags, {
       Name = "${var.project_name}-${var.environment}-private-route-a"
+      Created_date         = local.created_date
     })
 }
 resource "aws_route_table" "terraform_private_route_b" {
@@ -143,6 +154,7 @@ resource "aws_route_table" "terraform_private_route_b" {
     }        
     tags = merge(var.standard_tags, {
       Name = "${var.project_name}-${var.environment}-private-route-b"
+      Created_date         = local.created_date
     })
 }
 resource "aws_route_table_association" "terraform_nat_route_association_a"{
