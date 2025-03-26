@@ -16,7 +16,7 @@ provider "aws" {
 }
 
 module reusable_terraform {
-  source  = "./module/"
+  source  = "./modules/"
   ##########NETWORK#################################################################
   vpc_cidr_block         = "100.0.160.0/20" #change if you want a different CIDR block
   public_subnet_a_cidr   = "100.0.160.0/24" #change if you want a different CIDR block
